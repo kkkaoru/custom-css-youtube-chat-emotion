@@ -1,0 +1,90 @@
+name: Test jobs
+on:
+  pull_request:
+  workflow_dispatch:
+env:
+  HUSKY: '0'
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+jobs:
+  prepare-cache:
+    name: Prepare Cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - run: pnpm i --frozen-lockfile
+  eslint:
+    name: ESLint
+    needs: prepare-cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: Install
+        run: pnpm i --frozen-lockfile
+      - name: ESLint
+        run: pnpm run eslint
+  prettier:
+    name: Prettier
+    needs: prepare-cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: Install
+        run: pnpm i --frozen-lockfile
+      - name: Prettier
+        run: pnpm run prettier
+  vitest:
+    name: Test
+    needs: prepare-cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: Install
+        run: pnpm i --frozen-lockfile
+      - name: vitest
+        run: pnpm run test
+  test:
+    needs: ['eslint', 'prettier', 'vitest']
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo Done test jobs

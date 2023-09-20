@@ -1,0 +1,3 @@
+{
+  "extends": "@kkkaoru/tsconfig/typescript-library.json"
+}

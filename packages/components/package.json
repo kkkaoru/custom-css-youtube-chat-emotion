@@ -1,0 +1,29 @@
+{
+  "name": "@kkkaoru/template-components",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "private": true,
+  "main": "./dist/template-components.umd.js",
+  "module": "./dist/template-components.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/template-components.mjs",
+      "require": "./template-components.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "prettier": "prettier --write --check src",
+    "eslint": "eslint --max-warnings=0 --fix --ext .ts,.tsx src"
+  },
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "frontend-monorepo-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "commit": "cz",
+    "commit-msg": "commitlint --edit",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish": "changeset publish",
+    "build": "turbo run build",
+    "prettier": "turbo run prettier",
+    "eslint": "turbo run eslint",
+    "lint-staged": "lint-staged",
+    "husky-install": "husky install",
+    "test": "turbo run test",
+    "turbo:login": "turbo login",
+    "turbo:link": "turbo link",
+    "prepare": "pnpm run husky-install & pnpm run build",
+    "preinstall": "npx -y only-allow pnpm",
+    "postinstall": "is-ci || typesync"
+  },
+  "engines": {
+    "node": "18.16.0",
+    "npm": "use pnpm",
+    "pnpm": ">=7",
+    "yarn": "use pnpm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kkkaoru/frontend-configs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/kkkaoru/frontend-configs/issues"
+  },
+  "homepage": "https://github.com/kkkaoru/frontend-configs#readme",
+  "devDependencies": {
+    "@kkkaoru/eslint-config": "latest",
+    "@kkkaoru/git-hooks": "latest",
+    "@kkkaoru/monorepo-root": "latest",
+    "@kkkaoru/prettier-config": "latest",
+    "@kkkaoru/tsconfig": "latest",
+    "@kkkaoru/vite-config": "latest",
+    "@kkkaoru/vitest-config": "latest",
+    "@types/eslint": "8.40.0",
+    "@types/is-ci": "3.0.0",
+    "@types/node": "18.16.15",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "eslint": "8.41.0",
+    "is-ci": "3.0.1",
+    "react": "18.2.0",
+    "typescript": "5.0.4",
+    "typesync": "0.11.1",
+    "vite": "4.3.8",
+    "vitest": "0.29.7"
+  }
+}
