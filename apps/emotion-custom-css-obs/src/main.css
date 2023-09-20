@@ -1,16 +1,27 @@
 :root {
   /* 絵文字の大きさの指定。2の場合は2倍表示 */
   --emoji-scale: 4;
+  /* 高さを600px以上にする場合は、4以上10未満ぐらいで調整するとガビガビしない状態で表示できます */
+  /* --emoji-scale: 8; */
   /* ボタンを表示する場合はblock, 非表示にする場合はnone */
-  /* --reaction-button-display: none; */
   --reaction-button-display: block;
+  /* 非表示にする場合はnone */
+  /* --reaction-button-display: none; */
+  --reaction-button-background-color: transparent;
+  /* 半透明の背景色にする場合の例 */
+  /* --reaction-button-background-color: rgba(1, 1, 1, 0.2); */
   /* ボタンの左側見切れないように調整する余白の横幅 */
-  --button-padding-left: 0.8em;
+  --button-padding-left: 2.4em;
+}
+
+/* OBSで読み込んだ時に上下に表示されるborderを非表示にするため */
+*:not(:root) {
+  border: none !important;
 }
 
 yt-reaction-control-panel-view-model {
   /* button の背景 */
-  --yt-spec-static-overlay-background-medium: transparent;
+  --yt-spec-static-overlay-background-medium: var(--reaction-button-background-color);
   /* button のアウトラインの線の色 */
   --yt-spec-static-overlay-button-primary: transparent;
 }
