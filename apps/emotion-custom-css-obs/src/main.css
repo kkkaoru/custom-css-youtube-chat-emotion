@@ -1,0 +1,42 @@
+:root {
+  /* 絵文字の大きさの指定。2の場合は2倍表示 */
+  --emoji-scale: 4;
+  /* ボタンを表示する場合はblock, 非表示にする場合はnone */
+  /* --reaction-button-display: none; */
+  --reaction-button-display: block;
+  /* ボタンの左側見切れないように調整する余白の横幅 */
+  --button-padding-left: 0.8em;
+}
+
+yt-reaction-control-panel-view-model {
+  /* button の背景 */
+  --yt-spec-static-overlay-background-medium: transparent;
+  /* button のアウトラインの線の色 */
+  --yt-spec-static-overlay-button-primary: transparent;
+}
+
+yt-reaction-control-panel-overlay-view-model:not(:root) {
+  align-items: flex-start;
+}
+
+#contents yt-live-chat-renderer {
+  background-color: transparent;
+}
+
+#input-panel,
+yt-live-chat-header-renderer,
+#ticker,
+#item-list {
+  display: none !important;
+}
+
+#reaction-control-panel {
+  display: var(--reaction-button-display);
+  padding-left: var(--button-padding-left);
+}
+
+#hover-area,
+yt-emoji-fountain-view-model {
+  transform-origin: left bottom;
+  transform: scale(var(--emoji-scale));
+}

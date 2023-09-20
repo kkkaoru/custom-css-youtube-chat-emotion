@@ -6,4 +6,9 @@ module.exports = {
     ...withVitest.parserOptions,
     tsconfigRootDir: __dirname,
   },
+  rules: {
+    ...withVitest.rules,
+    'unicorn/no-array-for-each': 'off',
+    'no-console': ['error', { allow: ['info'] }],
+  },
 };

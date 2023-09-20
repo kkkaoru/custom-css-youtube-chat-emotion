@@ -1,0 +1,1 @@
+(function(e,t){typeof exports=="object"&&typeof module<"u"?t(exports):typeof define=="function"&&define.amd?define(["exports"],t):(e=typeof globalThis<"u"?globalThis:e||self,t(e.TemplateUtils={}))})(this,function(e){"use strict";function t(n,i){return n+i}e.concatText=t,Object.defineProperty(e,Symbol.toStringTag,{value:"Module"})});
