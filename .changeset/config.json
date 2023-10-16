@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "kkkaoru/frontend-monorepo-template" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "kkkaoru/custom-css-youtube-chat-emotion" }],
   "commit": false,
   "fixed": [],
   "linked": [],
