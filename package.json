@@ -47,7 +47,7 @@
     "@kkkaoru/tsconfig": "latest",
     "@kkkaoru/vite-config": "latest",
     "@kkkaoru/vitest-config": "latest",
-    "@types/eslint": "8.40.0",
+    "@types/eslint": "8.56.12",
     "@types/is-ci": "3.0.0",
     "@types/node": "18.16.15",
     "@types/react": "18.2.7",
